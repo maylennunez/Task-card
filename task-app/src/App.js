@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { todos } from './todos.json';
+import TodoForm from './components/TodoForms'
 console.log(todos);
 
 class App extends Component {
@@ -9,10 +10,26 @@ class App extends Component {
     super();
     this.state = {
       todos
-    }
+    };
+
+    this.handleAddTodo = this.handleAddTodo.bind(this);
   }
 
+  handleAddTodo(todo) {
+    this.setState({
+      todos: [...this.state.todos, todo]
+    })
+  }
 
+  removeTodo(index) {
+    if (window.confirm('Are you sure you want to delete it?')) {
+      this.setState({
+        todos: this.state.todos.filter((e, i) => {
+          return i !== index
+        })
+      })
+    }
+  }
 
   render() {
 
@@ -32,6 +49,14 @@ class App extends Component {
               </p>
               <p> <mark>{todo.responsible}</mark></p>
             </div>
+            <div className="card-footer">
+              <button
+                className="btn btn-danger">
+                onClick={this.removeTodo.bind(this)}
+              >
+              </button>
+              Delete
+            </div>
           </div>
         </div>
       )
@@ -50,7 +75,14 @@ class App extends Component {
         </nav>
         <div className="container">
           <div className="row mt-4">
-            {todos}
+            <div className="col-md-3">
+              <TodoForm onAddTodo={this.handleAddTodo} />
+            </div>
+            <div className="col-md-9">
+              <div className="row">
+                {todos}
+              </div>
+            </div>
           </div>
         </div>
       </div>
