@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+
+// data
 import { todos } from './todos.json';
+
+// subcomponents
 import TodoForm from './components/TodoForms'
 console.log(todos);
 
@@ -35,9 +39,9 @@ class App extends Component {
 
     const todos = this.state.todos.map((todo, i) => {
       return (
-        <div className="col-md-4">
+        <div className="col-md-4" key={i}>
           <div className="card mt-4">
-            <div className="card-header">
+          <div className="card-title text-center">
               <h3>{todo.title}</h3>
               <span className=" badge badge-pill badge-danger ml-2 ">
                 {todo.priority}
@@ -51,17 +55,17 @@ class App extends Component {
             </div>
             <div className="card-footer">
               <button
-                className="btn btn-danger">
-                onClick={this.removeTodo.bind(this)}
-              >
-              </button>
+                className="btn btn-danger"
+                onClick={this.removeTodo.bind(this, i)}>
               Delete
+              </button>
             </div>
           </div>
         </div>
       )
     })
 
+// return the component
 
     return (
       <div className="App">
@@ -78,7 +82,7 @@ class App extends Component {
             <div className="col-md-3">
               <TodoForm onAddTodo={this.handleAddTodo} />
             </div>
-            <div className="col-md-9">
+            <div className="col-md-8">
               <div className="row">
                 {todos}
               </div>
