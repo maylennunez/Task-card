@@ -69,7 +69,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <nav className="navbar navbar-dark bg-dark">
+        <nav className="navbar navbar-dark bg-info">
           <a href="" className="text-white">
             Task
             <span className="badge badge-pill badge-light ml-2">

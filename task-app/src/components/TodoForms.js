@@ -30,7 +30,8 @@ this.props.onAddTodo(this.state)
 
     render() {
         return (
-            <div className="card">
+            <div class="shadow-sm p-3 mb-5 bg-white rounded">
+            <div  className="card">
                 <form className="card-body" onSubmit={this.handleInput}>
                     <div className="form-group">
                         <input
@@ -76,7 +77,7 @@ this.props.onAddTodo(this.state)
                             Save
                         </button>
                         </form>  
-                        
+                        </div>
                     </div>
                   
                   
