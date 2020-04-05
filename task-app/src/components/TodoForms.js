@@ -79,7 +79,7 @@ class TodoForm extends Component {
 
                             </select>
                         </div>
-                        <button type="submit" className="btn btn-primary" onSubmit={this.handleSubmit}>
+                        <button type="submit" className="btn btn-primary" >
                             Save
                         </button>
                     </form>
