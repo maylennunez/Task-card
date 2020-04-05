@@ -15,9 +15,10 @@ class App extends Component {
     this.state = {
       todos
     };
-
     this.handleAddTodo = this.handleAddTodo.bind(this);
   }
+
+// add to do
 
   handleAddTodo(todo) {
     this.setState({
@@ -70,7 +71,7 @@ class App extends Component {
     return (
       <div className="App">
         <nav className="navbar navbar-dark bg-info">
-          <a href="" className="text-white">
+          <a href="/" className="text-white">
             Task
             <span className="badge badge-pill badge-light ml-2">
               {this.state.todos.length}

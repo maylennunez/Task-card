@@ -22,67 +22,73 @@ class TodoForm extends Component {
         // console.log(e.target.value, e.target.name);
 
     }
-handleSubmit(e){
-e.preventDefault();
-this.props.onAddTodo(this.state)
-}
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.onAddTodo(this.state)
+        this.setState({
+            title: '',
+            responsible: '',
+            description: '',
+            priority: 'low'
+        });
+    }
 
 
     render() {
         return (
             <div class="shadow-sm p-3 mb-5 bg-white rounded">
-            <div  className="card">
-                <form className="card-body" onSubmit={this.handleInput}>
-                    <div className="form-group">
-                        <input
-                            type="text"
-                            name="title"
-                            onChange={this.handleInput}
-                            className="form-control"
-                            placeholder="Title"
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input
-                            type="text"
-                            name="responsible"
-                            className="form-control"
-                            placeholder="responsible"
-                            onChange={this.handleInput}
-                        />
-                    </div>
-
-                    <div className="form-group">
-                        <input
-                            type="text"
-                            name="Description"
-                            className="form-control"
-                            placeholder="Description"
-                            onChange={this.handleInput}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <select
-                            name="priority"
-                            className="form-control"
-                            onChange={this.handleInput}
-                        >
-                            <option>low</option>
-                            <option>medim</option>
-                            <option>high</option>
-                         
-                        </select>
+                <div className="card">
+                    <form className="card-body" onSubmit={this.handleSubmit}>
+                        <div className="form-group">
+                            <input
+                                type="text"
+                                name="title"
+                                onChange={this.handleInput}
+                                className="form-control"
+                                placeholder="Title"
+                            />
                         </div>
-                        <button type="submit" className="btn btn-primary">
+                        <div className="form-group">
+                            <input
+                                type="text"
+                                name="responsible"
+                                className="form-control"
+                                placeholder="responsible"
+                                onChange={this.handleInput}
+                            />
+                        </div>
+
+                        <div className="form-group">
+                            <input
+                                type="text"
+                                name="Description"
+                                className="form-control"
+                                placeholder="Description"
+                                onChange={this.handleInput}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <select
+                                name="priority"
+                                className="form-control"
+                                onChange={this.handleInput}
+                            >
+                                <option>low</option>
+                                <option>medim</option>
+                                <option>high</option>
+
+                            </select>
+                        </div>
+                        <button type="submit" className="btn btn-primary" onSubmit={this.handleSubmit}>
                             Save
                         </button>
-                        </form>  
-                        </div>
-                    </div>
-                  
-                  
-    )
-}
+                    </form>
+                </div>
+            </div>
+
+
+        )
+    }
 }
 export default TodoForm;
 
