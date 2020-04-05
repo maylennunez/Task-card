@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
   
 }
@@ -41,4 +41,21 @@
 
 .container {
 background-image: url(/images.png);
+} */
+
+.App {
+  background: darkslategrey;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, rgba(165, 173, 172, 0.867), #26DC);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, black, rgba(40, 45, 65, 0.8)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100vh;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
